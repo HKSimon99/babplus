@@ -143,7 +143,7 @@ export default function MenuDisplay() {
                   onClick={() => setModalImage(todayMenu.imageUrl)}
                   title="크게 보기"
                 >
-                  🔍 크게 보기
+                  🔍 확대
                 </button>
                 <button
                   className="btn btn--accent"

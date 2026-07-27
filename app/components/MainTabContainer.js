@@ -16,13 +16,13 @@ export default function MainTabContainer() {
           className={`tab-btn ${activeTab === 'menu' ? 'tab-btn--active' : ''}`}
           onClick={() => setActiveTab('menu')}
         >
-          🍱 밥플러스 점심메뉴
+          🍱 밥플러스 점심
         </button>
         <button
           className={`tab-btn ${activeTab === 'coffee' ? 'tab-btn--active' : ''}`}
           onClick={() => setActiveTab('coffee')}
         >
-          ☕ 트립플러스 커피주문
+          ☕ 트립플러스 커피
         </button>
       </nav>
 
@@ -38,14 +38,14 @@ export default function MainTabContainer() {
         <div className="fade-in">
           <div className="coffee-container">
             <div className="coffee-header">
-              <span className="coffee-title">☕ 트립플러스 커피 주문하기</span>
+              <span className="coffee-title">☕ 트립플러스 주문</span>
               <a
                 href={COFFEE_ORDER_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn--accent"
               >
-                ↗ 새 창에서 열기
+                ↗ 새창 열기
               </a>
             </div>
             <div className="coffee-iframe-wrap">
