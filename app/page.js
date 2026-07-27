@@ -1,14 +1,14 @@
-import MenuDisplay from './components/MenuDisplay';
+import MainTabContainer from './components/MainTabContainer';
 
 export default function Home() {
   return (
     <main className="main">
       <header className="header">
-        <h1 className="header__title">중식메뉴</h1>
-        <p className="header__subtitle">밥플러스 생각공장 당산점</p>
+        <h1 className="header__title">GME 점심코스</h1>
+        <p className="header__subtitle">밥플러스 점심메뉴 & 트립플러스 커피주문</p>
       </header>
 
-      <MenuDisplay />
+      <MainTabContainer />
 
       <footer className="footer">
         <p>

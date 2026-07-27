@@ -115,10 +115,90 @@ body {
   padding: 40px 20px 80px;
 }
 
+/* --- Tabs Navigation --- */
+.tabs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 32px;
+  background: var(--bg-glass);
+  border: 1px solid var(--bg-glass-border);
+  padding: 6px;
+  border-radius: var(--radius-lg);
+  backdrop-filter: blur(12px);
+}
+
+.tab-btn {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 20px;
+  border-radius: var(--radius-md);
+  border: none;
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  font-family: inherit;
+}
+
+.tab-btn:hover {
+  color: var(--text-primary);
+  background: var(--bg-card-hover);
+}
+
+.tab-btn--active {
+  background: var(--accent-gradient);
+  color: white;
+  box-shadow: 0 4px 20px rgba(124, 58, 237, 0.3);
+}
+
+/* --- Coffee Order Container --- */
+.coffee-container {
+  border-radius: var(--radius-xl);
+  background: var(--bg-card);
+  border: 1px solid var(--bg-glass-border);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+}
+
+.coffee-header {
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--bg-glass-border);
+  background: var(--bg-secondary);
+}
+
+.coffee-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.coffee-iframe-wrap {
+  width: 100%;
+  height: 75vh;
+  min-height: 550px;
+  background: #ffffff;
+}
+
+.coffee-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
 /* --- Header --- */
 .header {
   text-align: center;
-  margin-bottom: 48px;
+  margin-bottom: 32px;
 }
 
 .header__badge {

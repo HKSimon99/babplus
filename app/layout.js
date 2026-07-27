@@ -1,12 +1,11 @@
 import './globals.css';
 
 export const metadata = {
-  title: '밥플러스 중식메뉴 | 생각공장 당산점',
-  description:
-    '밥플러스 생각공장 당산(11호점)의 오늘의 중식메뉴를 실시간으로 확인하세요.',
+  title: 'GME 점심코스',
+  description: '밥플러스 점심메뉴 확인 & 트립플러스 커피주문 서비스',
   openGraph: {
-    title: '밥플러스 중식메뉴',
-    description: '생각공장 당산점 오늘의 중식메뉴를 실시간으로 확인',
+    title: 'GME 점심코스',
+    description: '밥플러스 점심메뉴 확인 & 트립플러스 커피주문 서비스',
     type: 'website',
   },
 };
