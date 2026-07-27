@@ -1,45 +1,50 @@
 /* =========================================================================
-   GME 점심코스 — Mobile-First Design System
-   Optimized for Smartphone Screens (iOS / Android App Feel)
+   GME 점심코스 — Vibrant Light Mobile-First Design System
+   Clean, Fresh, Modern Light UI for Smartphone Screens
    ========================================================================= */
 
 :root {
-  --bg-primary: #090a10;
-  --bg-secondary: #121420;
-  --bg-card: rgba(255, 255, 255, 0.04);
-  --bg-card-hover: rgba(255, 255, 255, 0.07);
-  --bg-glass: rgba(22, 25, 40, 0.7);
-  --bg-glass-border: rgba(255, 255, 255, 0.1);
+  /* --- Colors: Bright & Clean --- */
+  --bg-primary: #f8fafc;
+  --bg-secondary: #ffffff;
+  --bg-card: #ffffff;
+  --bg-card-hover: #f1f5f9;
+  --bg-glass: rgba(255, 255, 255, 0.85);
+  --bg-glass-border: rgba(226, 232, 240, 0.8);
 
-  --text-primary: #f5f5fa;
-  --text-secondary: #9494ad;
-  --text-tertiary: #606078;
-  --text-accent: #a78bfa;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-tertiary: #94a3b8;
+  --text-accent: #7c3aed;
 
-  --accent-start: #7c3aed;
-  --accent-mid: #6d28d9;
-  --accent-end: #06b6d4;
-  --accent-gradient: linear-gradient(135deg, #8b5cf6 0%, #06b6d4 100%);
-  --accent-glow: linear-gradient(135deg, rgba(139, 92, 246, 0.4), rgba(6, 182, 212, 0.4));
+  /* Vibrant Accent: Fresh Amber to Coral Purple */
+  --accent-start: #f59e0b;
+  --accent-mid: #ef4444;
+  --accent-end: #8b5cf6;
+  --accent-gradient: linear-gradient(135deg, #7c3aed 0%, #06b6d4 100%);
+  --accent-soft: rgba(124, 58, 237, 0.08);
 
   --success: #10b981;
   --warning: #f59e0b;
   --error: #ef4444;
 
+  /* --- Spacing & Radius --- */
   --radius-sm: 10px;
   --radius-md: 16px;
   --radius-lg: 22px;
-  --radius-xl: 28px;
+  --radius-xl: 26px;
 
-  --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.4);
-  --shadow-active: 0 12px 40px rgba(124, 58, 237, 0.25);
+  /* --- Soft Shadows --- */
+  --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.04);
+  --shadow-md: 0 6px 20px -2px rgba(15, 23, 42, 0.06), 0 2px 6px -1px rgba(15, 23, 42, 0.03);
+  --shadow-lg: 0 12px 32px -4px rgba(15, 23, 42, 0.1), 0 4px 12px -2px rgba(15, 23, 42, 0.05);
 
   --transition-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-smooth: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-bounce: 0.4s cubic-bezier(0.34, 1.4, 0.64, 1);
+  --transition-bounce: 0.35s cubic-bezier(0.34, 1.4, 0.64, 1);
 }
 
-/* --- Reset & Touch Optimization --- */
+/* --- Reset & Base Optimization --- */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -63,7 +68,7 @@ body {
   overflow-x: hidden;
 }
 
-/* --- Background Gradient Orbs --- */
+/* --- Subtle Background Mesh Glow --- */
 .bg-gradient {
   position: fixed;
   inset: 0;
@@ -75,41 +80,41 @@ body {
 .bg-gradient::before {
   content: '';
   position: absolute;
-  top: -10%;
+  top: -15%;
   left: 50%;
   transform: translateX(-50%);
-  width: 100vw;
-  height: 100vw;
-  max-width: 500px;
-  max-height: 500px;
+  width: 120vw;
+  height: 120vw;
+  max-width: 600px;
+  max-height: 600px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(139, 92, 246, 0.12) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(124, 58, 237, 0.06) 0%, rgba(6, 182, 212, 0.04) 50%, transparent 70%);
 }
 
-/* --- Mobile App Container --- */
+/* --- Main Mobile App Frame --- */
 .main {
   position: relative;
   z-index: 1;
   width: 100%;
-  max-width: 480px; /* Mobile App Viewport */
+  max-width: 480px; /* Smartphone Viewport Width */
   margin: 0 auto;
-  padding: 16px 16px 40px;
+  padding: 20px 18px 44px;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
-/* --- Compact Mobile Header --- */
+/* --- Clean Mobile Header --- */
 .header {
   text-align: center;
-  padding: 12px 0 16px;
+  padding: 8px 0 18px;
 }
 
 .header__title {
-  font-size: 1.6rem;
+  font-size: 1.65rem;
   font-weight: 800;
-  letter-spacing: -0.02em;
-  line-height: 1.2;
+  letter-spacing: -0.03em;
+  line-height: 1.25;
   background: var(--accent-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -117,26 +122,26 @@ body {
 }
 
 .header__subtitle {
-  font-size: 0.82rem;
+  font-size: 0.84rem;
   color: var(--text-secondary);
   margin-top: 4px;
   font-weight: 500;
 }
 
-/* --- Mobile Segmented Control (Tabs) --- */
+/* --- Mobile Segmented Tab Navigation --- */
 .tabs {
   display: flex;
   align-items: center;
-  background: rgba(255, 255, 255, 0.05);
+  background: #ffffff;
   border: 1px solid var(--bg-glass-border);
-  padding: 4px;
+  padding: 5px;
   border-radius: var(--radius-lg);
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(16px);
   margin-bottom: 20px;
   position: sticky;
-  top: 12px;
+  top: 14px;
   z-index: 50;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  box-shadow: var(--shadow-md);
 }
 
 .tab-btn {
@@ -146,7 +151,7 @@ body {
   align-items: center;
   justify-content: center;
   gap: 6px;
-  border-radius: 18px;
+  border-radius: 16px;
   border: none;
   background: transparent;
   color: var(--text-secondary);
@@ -163,20 +168,20 @@ body {
 
 .tab-btn--active {
   background: var(--accent-gradient);
-  color: white;
-  box-shadow: 0 4px 16px rgba(139, 92, 246, 0.4);
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(124, 58, 237, 0.3);
 }
 
-/* --- Mobile Status Bar --- */
+/* --- Status Bar --- */
 .status-bar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 14px;
+  padding: 10px 16px;
   border-radius: var(--radius-md);
-  background: var(--bg-card);
+  background: #ffffff;
   border: 1px solid var(--bg-glass-border);
-  backdrop-filter: blur(12px);
+  box-shadow: var(--shadow-sm);
   margin-bottom: 20px;
   font-size: 0.78rem;
   color: var(--text-secondary);
@@ -189,21 +194,18 @@ body {
 }
 
 .header__badge-dot {
-  width: 7px;
-  height: 7px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
   background: var(--success);
-  box-shadow: 0 0 8px var(--success);
 }
 
 .header__badge-dot--warning {
   background: var(--warning);
-  box-shadow: 0 0 8px var(--warning);
 }
 
 .header__badge-dot--error {
   background: var(--error);
-  box-shadow: 0 0 8px var(--error);
 }
 
 .btn {
@@ -215,31 +217,33 @@ body {
   padding: 0 14px;
   border: 1px solid var(--bg-glass-border);
   border-radius: 12px;
-  background: var(--bg-glass);
+  background: #ffffff;
   color: var(--text-primary);
   font-size: 0.78rem;
   font-weight: 600;
   font-family: inherit;
   cursor: pointer;
+  box-shadow: var(--shadow-sm);
   transition: all var(--transition-fast);
 }
 
 .btn:active {
   transform: scale(0.95);
+  background: var(--bg-card-hover);
 }
 
 .btn--accent {
   background: var(--accent-gradient);
   border: none;
-  color: white;
-  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.25);
 }
 
 .btn__spinner {
   width: 14px;
   height: 14px;
-  border: 2px solid rgba(255, 255, 255, 0.3);
-  border-top-color: white;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-top-color: #ffffff;
   border-radius: 50%;
   animation: spin 0.8s linear infinite;
 }
@@ -252,31 +256,28 @@ body {
 .section-title {
   font-size: 0.82rem;
   font-weight: 700;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.04em;
   color: var(--text-secondary);
   margin-bottom: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
 }
 
-/* --- Today's Hero Card (Mobile Optimized 1:1 Ratio) --- */
+/* --- Today's Menu Hero Card --- */
 .hero-card {
   position: relative;
   border-radius: var(--radius-xl);
-  background: var(--bg-secondary);
+  background: #ffffff;
   border: 1px solid var(--bg-glass-border);
   overflow: hidden;
-  margin-bottom: 28px;
-  box-shadow: var(--shadow-card);
+  margin-bottom: 24px;
+  box-shadow: var(--shadow-md);
 }
 
 .hero-card__image-wrap {
   position: relative;
   width: 100%;
-  aspect-ratio: 1 / 1; /* Mobile full view ratio */
+  aspect-ratio: 1 / 1;
   overflow: hidden;
-  background: #000;
+  background: #f1f5f9;
   cursor: pointer;
 }
 
@@ -284,14 +285,7 @@ body {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  background: #000;
-}
-
-.hero-card__overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, transparent 30%, rgba(0,0,0,0.7) 100%);
-  pointer-events: none;
+  background: #f1f5f9;
 }
 
 .hero-card__date-badge {
@@ -300,12 +294,11 @@ body {
   left: 14px;
   padding: 6px 14px;
   border-radius: 20px;
-  background: rgba(0, 0, 0, 0.65);
-  backdrop-filter: blur(12px);
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(10px);
   font-size: 0.82rem;
   font-weight: 700;
-  color: white;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #ffffff;
 }
 
 .hero-card__today-badge {
@@ -317,7 +310,7 @@ body {
   background: var(--accent-gradient);
   font-size: 0.72rem;
   font-weight: 800;
-  color: white;
+  color: #ffffff;
 }
 
 .hero-card__footer {
@@ -325,12 +318,12 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: var(--bg-secondary);
+  background: #ffffff;
   gap: 12px;
 }
 
 .hero-card__title {
-  font-size: 1rem;
+  font-size: 1.02rem;
   font-weight: 700;
   color: var(--text-primary);
 }
@@ -343,27 +336,28 @@ body {
 /* --- Empty / Loading States --- */
 .empty-state {
   text-align: center;
-  padding: 48px 20px;
+  padding: 44px 20px;
   border-radius: var(--radius-xl);
-  background: var(--bg-card);
+  background: #ffffff;
   border: 1px solid var(--bg-glass-border);
-  margin-bottom: 28px;
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 24px;
 }
 
 .empty-state__icon {
   font-size: 2.8rem;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 .empty-state__title {
-  font-size: 1.1rem;
+  font-size: 1.08rem;
   font-weight: 700;
   margin-bottom: 6px;
   color: var(--text-primary);
 }
 
 .empty-state__desc {
-  font-size: 0.85rem;
+  font-size: 0.84rem;
   color: var(--text-secondary);
   line-height: 1.5;
 }
@@ -372,14 +366,14 @@ body {
   border-radius: var(--radius-xl);
   background: linear-gradient(
     110deg,
-    var(--bg-card) 30%,
-    rgba(255, 255, 255, 0.08) 50%,
-    var(--bg-card) 70%
+    #e2e8f0 30%,
+    #f8fafc 50%,
+    #e2e8f0 70%
   );
   background-size: 200% 100%;
   animation: shimmer 1.5s ease-in-out infinite;
   aspect-ratio: 1 / 1;
-  margin-bottom: 28px;
+  margin-bottom: 24px;
 }
 
 @keyframes shimmer {
@@ -387,7 +381,7 @@ body {
   100% { background-position: -200% 0; }
 }
 
-/* --- Recent Menu Grid (2 Columns on Mobile) --- */
+/* --- Recent Menu Grid (2 Columns) --- */
 .gallery {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -397,11 +391,12 @@ body {
 .gallery-card {
   position: relative;
   border-radius: var(--radius-md);
-  background: var(--bg-card);
+  background: #ffffff;
   border: 1px solid var(--bg-glass-border);
   overflow: hidden;
+  box-shadow: var(--shadow-sm);
   cursor: pointer;
-  transition: transform var(--transition-fast);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
 }
 
 .gallery-card:active {
@@ -411,7 +406,7 @@ body {
 .gallery-card__image-wrap {
   width: 100%;
   aspect-ratio: 1 / 1;
-  background: #000;
+  background: #f1f5f9;
   overflow: hidden;
 }
 
@@ -419,7 +414,7 @@ body {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  background: #000;
+  background: #f1f5f9;
 }
 
 .gallery-card__info {
@@ -427,7 +422,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: var(--bg-secondary);
+  background: #ffffff;
 }
 
 .gallery-card__date {
@@ -436,22 +431,22 @@ body {
   color: var(--text-primary);
 }
 
-/* --- Coffee Container (Full Mobile Screen View) --- */
+/* --- Coffee Container --- */
 .coffee-container {
   border-radius: var(--radius-xl);
-  background: var(--bg-secondary);
+  background: #ffffff;
   border: 1px solid var(--bg-glass-border);
   overflow: hidden;
-  box-shadow: var(--shadow-card);
+  box-shadow: var(--shadow-md);
 }
 
 .coffee-header {
-  padding: 14px 16px;
+  padding: 14px 18px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid var(--bg-glass-border);
-  background: var(--bg-secondary);
+  background: #ffffff;
 }
 
 .coffee-title {
@@ -462,7 +457,7 @@ body {
 
 .coffee-iframe-wrap {
   width: 100%;
-  height: calc(100vh - 210px);
+  height: calc(100vh - 200px);
   min-height: 480px;
   background: #ffffff;
 }
@@ -473,13 +468,13 @@ body {
   border: none;
 }
 
-/* --- Mobile Image Full Modal --- */
+/* --- Image Modal --- */
 .modal-overlay {
   position: fixed;
   inset: 0;
   z-index: 2000;
-  background: rgba(0, 0, 0, 0.92);
-  backdrop-filter: blur(10px);
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(8px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -489,7 +484,7 @@ body {
 .modal-content {
   position: relative;
   width: 100%;
-  max-width: 480px;
+  max-width: 440px;
   max-height: 90vh;
   display: flex;
   flex-direction: column;
@@ -501,18 +496,19 @@ body {
   max-height: 75vh;
   object-fit: contain;
   border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
 }
 
 .modal-close {
   position: absolute;
-  top: -48px;
+  top: -46px;
   right: 0;
-  width: 38px;
-  height: 38px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  color: white;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #ffffff;
   font-size: 1.2rem;
   cursor: pointer;
   display: flex;
@@ -531,11 +527,11 @@ body {
   font-size: 0.9rem;
 }
 
-/* --- Mobile Footer --- */
+/* --- Footer --- */
 .footer {
   text-align: center;
   margin-top: auto;
-  padding-top: 28px;
+  padding-top: 24px;
   font-size: 0.75rem;
   color: var(--text-tertiary);
   line-height: 1.6;
@@ -544,6 +540,7 @@ body {
 .footer a {
   color: var(--text-accent);
   text-decoration: none;
+  font-weight: 600;
 }
 
 /* --- Fade In Animation --- */
@@ -552,6 +549,6 @@ body {
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(8px); }
+  from { opacity: 0; transform: translateY(6px); }
   to { opacity: 1; transform: translateY(0); }
 }
