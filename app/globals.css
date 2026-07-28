@@ -468,52 +468,72 @@ body {
   border: none;
 }
 
-/* --- Image Modal --- */
+/* --- Mobile Image Full Modal --- */
 .modal-overlay {
   position: fixed;
   inset: 0;
   z-index: 2000;
-  background: rgba(15, 23, 42, 0.85);
-  backdrop-filter: blur(8px);
+  background: rgba(15, 23, 42, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 16px;
+  padding: 20px 16px;
 }
 
 .modal-content {
   position: relative;
   width: 100%;
   max-width: 440px;
-  max-height: 90vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  animation: scaleUp 0.2s cubic-bezier(0.34, 1.4, 0.64, 1);
+}
+
+@keyframes scaleUp {
+  from { transform: scale(0.92); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
 }
 
 .modal-content img {
   width: 100%;
-  max-height: 75vh;
+  max-height: 70vh;
+  max-height: 70dvh;
   object-fit: contain;
   border-radius: var(--radius-md);
-  box-shadow: var(--shadow-lg);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  background: #f1f5f9;
 }
 
+/* Fixed Mobile X Close Button */
 .modal-close {
-  position: absolute;
-  top: -46px;
-  right: 0;
-  width: 36px;
-  height: 36px;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 2200;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(15, 23, 42, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.25);
   color: #ffffff;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
+  font-weight: 600;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(8px);
+  transition: transform var(--transition-fast);
+}
+
+.modal-close:active {
+  transform: scale(0.9);
+  background: rgba(15, 23, 42, 0.9);
 }
 
 .modal-actions {
@@ -523,8 +543,10 @@ body {
 
 .modal-actions .btn {
   width: 100%;
-  height: 44px;
-  font-size: 0.9rem;
+  height: 48px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  border-radius: 14px;
 }
 
 /* --- Footer --- */

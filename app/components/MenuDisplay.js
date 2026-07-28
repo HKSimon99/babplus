@@ -197,17 +197,21 @@ export default function MenuDisplay() {
           className="modal-overlay"
           onClick={() => setModalImage(null)}
         >
+          <button
+            className="modal-close"
+            onClick={(e) => {
+              e.stopPropagation();
+              setModalImage(null);
+            }}
+            aria-label="닫기"
+          >
+            ✕
+          </button>
           <div
             className="modal-content"
             onClick={(e) => e.stopPropagation()}
           >
             <img src={modalImage} alt="메뉴 확대" />
-            <button
-              className="modal-close"
-              onClick={() => setModalImage(null)}
-            >
-              ✕
-            </button>
             <div className="modal-actions">
               <button
                 className="btn btn--accent"
@@ -216,7 +220,7 @@ export default function MenuDisplay() {
                   handleDownload(modalImage, menu?.title || 'menu');
                 }}
               >
-                ⬇ 저장
+                ⬇ 이미지 저장하기
               </button>
             </div>
           </div>
